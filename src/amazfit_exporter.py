@@ -53,7 +53,7 @@ def db_to_gpx(db,dest):
 					hour=datetime.datetime.fromtimestamp(time).strftime('%H')
 					minute=datetime.datetime.fromtimestamp(time).strftime('%M')
 					second=datetime.datetime.fromtimestamp(time).strftime('%S')			
-					cur.execute('SELECT rate from heart_rate where time=' + str(time*1000))
+					cur.execute('SELECT rate from heart_rate where time=' + str(round(time)*1000))
 					rate=cur.fetchone()
 					out.write('   <trkpt lon="'+longitud+'" lat="'+latitud+'">'+ '\r\n')
 					out.write('    <ele>'+altitud+'</ele>'+ '\r\n')
