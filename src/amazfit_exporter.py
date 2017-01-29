@@ -9,7 +9,7 @@ def db_to_gpx(db,dest):
 	with con:
 	    
 		cur = con.cursor()    
-		cur.execute('SELECT track_id, start_time from sport_summary where type=2')
+		cur.execute('SELECT track_id, start_time from sport_summary where type=2 or type=1')
 		running_sessions = cur.fetchall()
 		for running_session in running_sessions:
 			track_id=running_session[0]
